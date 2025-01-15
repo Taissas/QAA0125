@@ -1,4 +1,5 @@
-name: Run autotests
+name: Run Tests on Windows
+
 on:
   workflow_dispatch:
     inputs:
@@ -9,9 +10,10 @@ on:
         default: all
         options:
          - all
+
 jobs:
-  run_tests:
-    runs-on: Windows-latest
+  run-tests:
+    runs-on: windows-latest  # Используем Windows
     name: Tests
     steps: 
      - name: Copy sourse code
