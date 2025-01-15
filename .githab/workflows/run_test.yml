@@ -1,5 +1,4 @@
-name: Run Tests on Windows
-
+name: Run autotests
 on:
   workflow_dispatch:
     inputs:
@@ -9,24 +8,20 @@ on:
         type: choice
         default: all
         options:
-         - all
+          - all
 
 jobs:
-  run-tests:
-    runs-on: windows-latest  # Используем Windows
+  run_tests:
+    runs-on: windows-latest
     name: Tests
     steps: 
-     - name: Copy sourse code
-       uses: actions/checkout@v4
-     - name: Set up Python env
-       uses: actions/setup-python@v5
-       with: 
-         python-version: "3.11"
-     - name: install dependencies
-       run: pip install -r requirements.txt 
-     - name: Run tests
-       run: pytest -v
-      
-          
-  
-        
+      - name: Copy source code
+        uses: actions/checkout@v4
+      - name: Set up Python env
+        uses: actions/setup-python@v5
+        with: 
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest -v
