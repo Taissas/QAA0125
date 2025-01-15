@@ -1,4 +1,4 @@
-name: Run autotests
+name: Run autotests 1
 on:
   workflow_dispatch:
     inputs:
